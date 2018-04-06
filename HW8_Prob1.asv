@@ -1,0 +1,54 @@
+% HW8_Prob1.m
+%
+% Homework #8, Problem #1
+% ECE 5322 – 21st Century Electromagnetics
+% 21ST CENTURY ELECTROMAGNETICS
+
+% INITIALIZE MATLAB
+close all;
+clc;
+clear all;
+
+% UNITS
+degrees = pi/180;
+
+% DEVICE PARAMETERS
+a = 1;
+Sx = 10*a;
+Sy = 10*a;
+
+% GRID PARAMETERS
+dx = a/Sx;
+Nx = Sx/dx;
+dy = a/Sy;
+Ny = Sy/dy;
+
+% CREATE SOME AXES
+xa = [0 : Nx-1]*dx; xa = xa - mean(xa);
+ya = [0 : Ny-1]*dy; ya = ya - mean(ya);
+[Y,X] = 
+
+% CREATE UNIFORM K-FUNCTION
+A = (25*degrees) * ones(Nx,Ny);
+R = (2*pi/a) * ones(Nx,Ny);
+[KX,KY] = pol2cart(A,R);
+
+% GENERATE GRATING
+ER = cos(KX.*X + KY.*Y);
+
+% PLOT K FUNCTION AND GRATING
+figure('Color','w');
+subplot(3,2,6)
+imagesc(xa,ya,KX')
+colorbar;
+axis equal tight
+
+subplot(3,2,5)
+imagesc(xa,ya,KY')
+colorbar;
+axis equal tight
+
+subplot(3,2,[1:3]);
+imagesc(xa,ya,ER')
+colorbar;
+axis equal tight
