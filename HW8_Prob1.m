@@ -154,5 +154,3 @@ title('$\textrm{Grating Phase Method}$','FontSize',15,'Interpreter'...
 xlabel('$\textrm{x}$','FontSize',12,'Interpreter','LaTex')
 ylabel('$\textrm{y}$','FontSize',12,'Interpreter','LaTex','Rotation',0)
 
-
-
